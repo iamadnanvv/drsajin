@@ -6,6 +6,23 @@
     --dark: #091E3E;
 }
 
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 h1,
 h2,
 .font-weight-bold {
@@ -118,10 +135,33 @@ h6,
     color: var(--primary);
 }
 
+.navbar-brand {
+    max-width: 100%;
+}
+
+.navbar-brand h1 {
+    font-size: clamp(1.1rem, 2vw, 2rem);
+    line-height: 1.2;
+    white-space: normal;
+}
+
 @media (max-width: 991.98px) {
     .navbar-light .navbar-nav .nav-link,
     .sticky-top.navbar-light .navbar-nav .nav-link {
         padding: 10px 0;
+    }
+
+    .navbar {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    .navbar-brand {
+        width: 100%;
+    }
+
+    .navbar-brand h1 {
+        max-width: 75%;
     }
 }
 
@@ -135,6 +175,15 @@ h6,
 }
 
 @media (max-width: 576px) {
+    .carousel-caption {
+        padding: 1rem;
+    }
+
+    .carousel-caption .p-3 {
+        max-width: 100% !important;
+        padding: 0.75rem !important;
+    }
+
     .carousel-caption h5 {
         font-size: 14px;
         font-weight: 500 !important;
@@ -143,6 +192,15 @@ h6,
     .carousel-caption h1 {
         font-size: 30px;
         font-weight: 600 !important;
+        line-height: 1.2;
+    }
+
+    .carousel-caption .btn {
+        display: inline-block;
+        width: auto;
+        margin-bottom: 0.5rem;
+        padding: 0.75rem 1rem !important;
+        font-size: 0.9rem;
     }
 }
 
@@ -211,4 +269,162 @@ h6,
 .team-item:hover .team-text::after,
 .service-item:hover .bg-light::after {
     opacity: 1;
+}
+
+.container-fluid {
+    width: 100%;
+    max-width: 100%;
+}
+
+@media (max-width: 767.98px) {
+    .container,
+    .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .row.g-5 > [class*="col-"] {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .section-title h5::before,
+    .section-title h5::after {
+        display: none;
+    }
+
+    .display-1,
+    .display-3,
+    .display-5,
+    .display-6 {
+        line-height: 1.2;
+        word-break: break-word;
+    }
+
+    .hero-header .display-3 {
+        font-size: 2.2rem;
+    }
+
+    .service-item img,
+    .service-item .rounded-top img,
+    .service-item .bg-light.rounded-bottom {
+        max-height: 220px;
+        object-fit: cover;
+    }
+
+    .bg-light.rounded.h-100.p-5,
+    .position-relative.bg-primary.rounded.h-100 {
+        padding: 1.5rem !important;
+    }
+
+    .top-shape {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    .top-shape::before {
+        display: none;
+    }
+
+    .top-shape p {
+        font-size: 0.78rem;
+        white-space: normal;
+        line-height: 1.4;
+    }
+
+    .navbar-brand h1 {
+        font-size: 1rem;
+        max-width: 80%;
+    }
+
+    .navbar-toggler {
+        margin-left: auto;
+    }
+
+    .btn {
+        white-space: normal;
+    }
+
+    .back-to-top {
+        right: 15px;
+        bottom: 15px;
+    }
+
+    iframe {
+        min-height: 280px !important;
+    }
+
+    .footer .row.g-5 > [class*="col-"] {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .container-fluid.py-5,
+    .container-fluid.bg-dark.text-light.py-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+
+    .section-title h1,
+    .section-title h5,
+    .section-title p {
+        text-align: center;
+    }
+
+    .navbar-nav {
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.5rem 0;
+    }
+
+    .carousel-caption h1 {
+        font-size: 1.8rem;
+    }
+
+    .carousel-caption h5 {
+        letter-spacing: 0.04rem;
+    }
+
+    .carousel-caption .btn {
+        width: 100%;
+        margin-right: 0 !important;
+        margin-bottom: 0.75rem;
+    }
+
+    .d-flex.align-items-center.mb-2,
+    .d-flex.align-items-center {
+        align-items: flex-start !important;
+    }
+
+    .bi.fs-1,
+    .fa.fs-1 {
+        font-size: 1.5rem !important;
+    }
+
+    .form-control,
+    .btn {
+        font-size: 0.95rem;
+    }
+
+    .text-center.text-md-start,
+    .text-center.text-md-end {
+        text-align: center !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
 }
